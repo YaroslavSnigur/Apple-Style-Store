@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^1.0.6",
     "next": "latest",
     "react": "18.2.0",
@@ -13,6 +14,7 @@
     "start": "^5.1.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
     "@types/node": "18.11.3",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
