@@ -4,4 +4,6 @@ export const fetchCategories = async () => {
   );
 
   const data = await res.json();
+  const categories: Category[] = data.categories;
+  return categories;
 };
