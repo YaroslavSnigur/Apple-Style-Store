@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/applestore/node_modules
 
 # testing
 /coverage
