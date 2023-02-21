@@ -8,9 +8,10 @@ import {
 } from "@heroicons/react/outline/";
 import { useSelector } from "react-redux";
 import { selectBasketItems } from "../redux/basketSlice";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 const Header = () => {
-  const session = false;
+  const { data: session } = useSession();
   const items = useSelector(selectBasketItems);
 
   return (
@@ -54,7 +55,7 @@ const Header = () => {
         {session ? (
           <Image
             src={
-              // session.user?.image ||
+              session.user?.image ||
               "https://www.gravatar.com/avatar/000000000000000000000000000000000000?d=mp&f=y"
             }
             alt=""
@@ -64,10 +65,7 @@ const Header = () => {
             // onClick={()=> signOut()}
           />
         ) : (
-          <UserIcon
-            className="headerIcon"
-            // onClick={()=> signIn()}
-          />
+          <UserIcon className="headerIcon" onClick={() => signIn()} />
         )}
       </div>
     </header>
